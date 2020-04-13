@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/">
+	<xs:element name="PARTS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TITTLE" type="xs:string" />
+				<xs:element name="PART">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ITEM" type="xs:string" >
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="MANUFACTURER" type="xs:string" />
+							<xs:element name="MODEL" type="xs:string" />
+							<xs:element name="COST" type="xs:decimal" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

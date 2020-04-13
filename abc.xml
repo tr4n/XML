@@ -1,0 +1,163 @@
+<student>
+    <id>1</id>
+    <name>Khanh</name>
+    <address>Viet Nam</address>
+</student>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/">
+    <xs:element name="student">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="address">
+                    <xs:simpleType>
+                        <restriction base="xs:string">
+                            <maxLength value="20"/>
+                        </restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+De thi 2013 
+
+<?xml version="1.0"?>
+<!DOCTYPE PARTS SYSTEM "parts.dtd">
+<PARTS>
+    <TITLE>Computer Parts</TITLE>
+    <PART>
+        <ITEM id="01">Motherboard</ITEM>
+        <MANUFACTURER>ASUS</MANUFACTURER>
+        <MODEL>P3B-F</MODEL>
+        <COST> 123.00</COST>
+    </PART>
+    <PART>
+        <ITEM id="02">Video Card</ITEM>
+        <MANUFACTURER>ATI</MANUFACTURER>
+        <MODEL>All-in-Wonder Pro</MODEL>
+        <COST> 160.00</COST>
+    </PART>
+    <PART>
+        <ITEM id="03">Sound Card</ITEM>
+        <MANUFACTURER>Creative Labs</MANUFACTURER>
+        <MODEL>Sound Blaster Live</MODEL>
+        <COST> 80.00</COST>
+    </PART>
+</PARTS>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/">
+    <xs:element name="PARTS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TITLE" type="xs:string"/>
+                <xs:element name="address">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ITEM" type="xs:string">
+                                <xs:complexType>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="MANUFACTURER" type="xs:string"/>
+                            <xs:element name="MODEL" type="xs:string"/>
+                            <xs:element name="COST" type="xs:decimal" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+De thi 2014 
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<breakfast_menu>
+    <food>
+        <name>Belgian Waffles</name>
+        <price>$5.95</price>
+        <description></description>
+        <calories>650</calories>
+    </food>
+    <food>
+        <name>Strawberry Belgian Waffles</name>
+        <price>$7.95</price>
+        <description>light Belgian waffles covered with strawberries and whipped cream</description>
+        <calories></calories>
+    </food>
+</breakfast_menu>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/">
+    <xs:element name="breakfast_menu">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TITLE" type="xs:string"/>
+                <xs:element name="food">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="price" type="xs:string" />
+                            <xs:element name="description" type="xs:string"/>
+                            <xs:element name="calories" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bookstore>
+    <book category="cooking">
+        <title lang="en">Everyday Italian</title>
+        <author>Giada De Laurentiis</author>
+        <year>2005</year>
+        <price>30.00</price>
+    </book>
+    <book category="children">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>29.99</price>
+    </book>
+    <book category="web">
+        <title lang="en">XQuery Kick Start</title>
+        <author>James McGovern</author>
+        <author>Per Bothner</author>
+        <author>Kurt Cagle</author>
+        <author>James Linn</author>
+        <author>Vaidyanathan Nagarajan</author>
+        <year>2003</year>
+        <price>49.99</price>
+    </book>
+    <book category="web" cover="paperback">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>39.95</price>
+    </book>
+</bookstore>

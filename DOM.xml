@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bookstore>
+    <book category="cooking">
+        <title lang="en">Everyday Italian</title>
+        <author>Giada De Laurentiis</author>
+        <year>2005</year>
+        <price>30.00</price>
+    </book>
+    <book category="children">
+        <title lang="en">Harry Potter</title>
+        <author>J K. Rowling</author>
+        <year>2005</year>
+        <price>29.99</price>
+    </book>
+    <book category="web">
+        <title lang="en">XQuery Kick Start</title>
+        <author>James McGovern</author>
+        <author>Per Bothner</author>
+        <author>Kurt Cagle</author>
+        <author>James Linn</author>
+        <author>Vaidyanathan Nagarajan</author>
+        <year>2003</year>
+        <price>49.99</price>
+    </book>
+    <book category="web" cover="paperback">
+        <title lang="en">Learning XML</title>
+        <author>Erik T. Ray</author>
+        <year>2003</year>
+        <price>39.95</price>
+    </book>
+</bookstore>
+
+Nap 1 tai lieu XML 
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            if(window.XMLHttpRequest){ xhttp=new XMLHttpRequest();
+            }else{ // for IE 5/6 xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+xhttp.open("GET","books.xml",false); xhttp.send(); xmlDoc=xhttp.responseXML;
+document.write("XML document loaded into an XML DOM Object.");
+        </script>
+    </body>
+</html>
+
+Nap 1 chuoi XML 
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+<!-- text="<bookstore><book>";
+text=text+"<title>Everyday Italian</title>";
+text=text+"<author>Giada De Laurentiis</author>";
+text=text+"<year>2005</year>";
+text=text+"</book></bookstore>";
+if(window.DOMParser){
+parser=new DOMParser();
+xmlDoc=parser.parseFromString(text,"text/xml");
+}else{ // Internet Explorer
+xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+xmlDoc.async=false;
+xmlDoc.loadXML(text); }
+document.write("XML string is loaded into an XML DOM Object"); -->
+</script>
+</body>
+</html>
+
+<!-- x.nodeName: tên của x
+ x.nodeValue: giá trị của x
+ x.parentNode: nút cha của x
+ x.childNodes: các nút con của x
+ x.attributes: các nút thuộc tính của x -->
